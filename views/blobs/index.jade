@@ -1,0 +1,23 @@
+extends ../layout
+
+block content
+    h1.
+         #{title}
+    p 
+                    a(href='/blobs/new') Crear    
+    ul
+        - each blob, i in blobs
+            h1.
+                
+            p Nombre: #{blob.name}
+   
+            
+
+                form(action='/blobs/#{blob._id}/edit',method='post',enctype='application/x-www-form-urlencoded')
+                    input(type='hidden',value='DELETE',name='_method')
+                    button(type='submit').
+                        Eliminar
+                p 
+                    a(href='/blobs/#{blob._id}/edit') Editar
+                p
+                    a(href='/blobs/#{blob._id}') Mostrar datos
