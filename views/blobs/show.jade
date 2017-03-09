@@ -1,11 +1,15 @@
 extends ../layout
 
 block content
-    h1.
-        ID #{blob._id}
-    p Nombre: #{blob.name}
-   
-    p Fecha de ingreso: #{blobdob}
- 
-    p  
-        a(href='/blobs') Inicio   
+    div(class="container")
+        div(class="row")
+            h1.
+                ID #{blob._id}
+            div(class="row")
+                div(class="col s12 m6 l6")    
+                p Nombre: #{blob.name}
+                div(class="col s12 m6 l6")
+                p Fecha de ingreso: #{blobdob}
+            
+                p  
+                    a(href='/blobs', , class="waves-effect waves-light btn") Inicio   

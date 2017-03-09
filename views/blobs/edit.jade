@@ -1,17 +1,22 @@
 extends ../layout
 
 block content
-    h1.
-        Usuario ID #{blob._id}
-    form(action='/blobs/#{blob._id}/edit',method='post',name='updateblob',enctype='application/x-www-form-urlencoded')
-        p Nombre: 
-            input#inputName(type='text', value='#{blob.name}', name='name')
+    div(class="container")
+        div(class="row")
+            h1.
+                Usuario ID #{blob._id}
+            form(action='/blobs/#{blob._id}/edit',method='post',name='updateblob',enctype='application/x-www-form-urlencoded')
+                div(class="row")
+                    div(class="col s12 m6 l6")
+                    p Nombre: 
+                        input#inputName(type='text', value='#{blob.name}', name='name')
 
-
-        p Fecha de ingreso: 
-            input#inputDob(type='date', value='#{blobdob}', name='dob')
-        p 
-            input(type='hidden',value='PUT',name='_method')
-        p 
-            button#btnSubmit(type='submit').
-                Actualizar
+                    div(class="col s12 m6 l6")    
+                    p Fecha de ingreso: 
+                        input#inputDob(type='date', value='#{blobdob}', name='dob')
+                    p 
+                        input(type='hidden',value='PUT',name='_method')
+                    div(class="row")
+                    p 
+                        button#btnSubmit(type='submit').
+                            Actualizar

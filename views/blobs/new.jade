@@ -1,14 +1,18 @@
 extends ../layout
 
 block content
-    h1.
-        #{title}
-    form#formAddBlob(name="addblob",method="post",action="/blobs")
-        p Nombre: 
-            input#inputName(type="text", placeholder="ex. John Smith", name="name")
-        
-        p Fecha ingreso: 
-            input#inputDob(type="date", name="dob")
-        
-        p
-            button#btnSubmit(type="submit") Crear
+    div(class="container")
+        div(class="row")
+            h1.
+                #{title}
+            form#formAddBlob(name="addblob",method="post",action="/blobs")
+                div(class="row")
+                    div(class="col s12 m6 l6")
+                    p Nombre: 
+                        input#inputName(type="text", placeholder="ex. John Doe", name="name")
+                    div(class="col s12 m6 l6")
+                    p Fecha ingreso: 
+                        input#inputDob(type="date", name="dob")
+                     div(class="row")
+                    p
+                        button#btnSubmit(type="submit") Crear
